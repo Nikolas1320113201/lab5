@@ -4,7 +4,8 @@ import pytest
 from maths import add_ten
 
 path_large_number_fixture = 'large_num_fixture.txt'
-
+import xmlrunner
+runner = xmlrunner.XMLTestRunner(output='test-reports')
 
 def test_add_ten():
     """ Tests the add_ten function """
