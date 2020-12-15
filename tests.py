@@ -8,7 +8,7 @@ class FlaskAppTests(unittest.TestCase)
 
     
     def SetUp(self):
-        self.appm = tested_app.app.test_client()
+        self.app = tested_app.app.test_client()
     
     
     def test_get_hello_endpoint(self):
