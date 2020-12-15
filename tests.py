@@ -1,32 +1,28 @@
 """ Tests for maths.py """
-import pytest
+import unittest
+import app as tested_app
+import json
 
-from maths import add_ten
-
-path_large_number_fixture = 'large_num_fixture.txt'
-import xmlrunner
-runner = xmlrunner.XMLTestRunner(output='test-reports')
-
-def test_add_ten():
-    """ Tests the add_ten function """
-    assert 15 == add_ten(5)
+class FlaskAppTests(unittest.TestCase)
 
 
-def test_add_ten_str_int():
-    """ Tests the add_ten function for string input """
-    assert add_ten('5') == '15'
+    
+    def SetUp(self):
+        self.appm = tested_app.app.test_client()
+    
+    
+    def test_get_hello_endpoint(self):
+        r = self.app.get('/')
+        self.assertEqual(r.status, '200 OK')
+        self.assertEqual(r.data, b'Hello world from app!! It is Pipeline testing.')
+        
+if __name__ == '__main__':
+    import xmlrunner
+    runner = xmlrunner.XMLTestRunner(output='test-reports')
+    unittest.main(testRunner=runner)
+    
+unittest.main()
+        
 
-
-def test_add_ten_none():
-    """ Tests that add_ten throws a ValueError when None input given """
-    assert add_ten(None) is None
-
-
-def test_large_number():
-
-    with open(path_large_number_fixture, 'r') as fh:
-        expected = int(fh.readline())
-
-    assert add_ten(90) == expected
 
 
