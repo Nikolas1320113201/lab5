@@ -1,10 +1,9 @@
-def add_ten(x):
-    if type(x) == str:
-        x_num = int(x)
-        result_num = x_num + 10
-        return str(result_num)
-    elif x is None:
-        return None
-    else:
-        return x + 10
+from flask import Flask
+app = Flask(__name__)
 
+@app.route('/')
+def hello_world():
+    return 'Hello world from app!! It is Pipeline testing.'
+
+if __name__ == '__main__':
+    app.run(debug=True,host='0.0.0.0')
