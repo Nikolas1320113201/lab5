@@ -3,5 +3,5 @@ class length:
         self.n = n
 
     def __add__(self, x):
-        return self.n*2 + 3
+        return self.n*2 + x
 
