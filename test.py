@@ -4,7 +4,7 @@ from lab2 import Calculator
 class TestCalculator(unittest.TestCase):
   
   def n_chlen_test(self):
-    self.assertEqual(self.n_chlen(3), 7)
+    self.assertEqual(self.n_chlen(3), 9)
 
 if __name__ == "__main__":
   import xmlrunner
