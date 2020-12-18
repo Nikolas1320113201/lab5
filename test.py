@@ -2,12 +2,10 @@ import unittest
 from lab2 import Calculator
 
 class TestCalculator(unittest.TestCase):
-  def __init__(self):
-    self.calculator = Calculator()
-    
+  test = Calculator(2)
+  
   def n_chlen(self):
-    self.assertEqual(self.calculator.add(3), 9)
-    self.assertEqual(self.calculator.add(4), 11)
+    self.assertEqual(self.test.__add__(3), 7)
 
 if __name__ == "__main__":
   import xmlrunner
